@@ -8,9 +8,33 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
 body {
   background: #080808;
   font-family: 'General Sans', sans-serif;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.canvas-container {
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+#about {
+  background: #080808;
+  position: relative;
+  z-index: 2;
 }
 
 @layer utilities {
@@ -58,6 +82,39 @@ body {
   /* hero section */
   .hero_tag {
     @apply text-center xl:text-6xl md:text-5xl sm:text-4xl text-3xl font-generalsans font-black !leading-normal;
+  }
+
+  /* Transition text styling */
+  #transition-scene .hero_tag {
+    @apply text-6xl sm:text-7xl md:text-8xl font-black;
+    transform-origin: center;
+    will-change: transform, opacity;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #transition-scene .hero_tag:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+
+  #transition-scene .hero_tag.is-pinned {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+    transition: all 0.3s ease;
+  }
+
+  #transition-scene {
+    min-height: 70vh;
+    margin-bottom: 30vh;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 50%, #080808 100%);
+  }
+
+  #about-title {
+    position: relative;
+    transform: translateZ(0);
+  }
+
+  #about-title.pinned {
+    @apply text-5xl sm:text-6xl md:text-7xl;
+    padding-top: 2rem;
   }
 
   /* about section */
@@ -151,6 +208,62 @@ body {
   }
 }
 
+/* Scene transitions */
+.scene-wrapper {
+  position: relative;
+  z-index: 1;
+  background: #080808;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+#transition-scene {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, transparent, #080808 50%);
+  z-index: 1;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+#hero {
+  z-index: 2;
+}
+
+#about {
+  position: relative;
+  z-index: 1;
+  background: #080808;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.pin-spacer {
+  background: transparent;
+}
+
+/* Smooth scrolling and performance optimizations */
+html {
+  scroll-behavior: smooth;
+}
+
+.canvas-wrapper {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Grid container animations */
+.grid-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
 .waving-hand {
   animation-name: wave-animation;
   animation-duration: 2.5s;
@@ -194,4 +307,73 @@ body {
   100% {
     transform: rotate(0deg);
   }
+}
+
+/* Smooth scrolling helpers */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Enhanced transitions */
+.scene-wrapper {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+#transition-scene {
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.hero-content {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.canvas-container {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Improve text transitions */
+#about-title {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+/* About section transitions */
+#about {
+  position: relative;
+  z-index: 1;
+  background: #080808;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.grid-container {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
