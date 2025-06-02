@@ -21,33 +21,33 @@ const TransitionScene = () => {
           lenis.raf(performance.now());
         },
       }
-    });
-
-    tl.fromTo(textRef.current,
+    });    tl.fromTo(textRef.current,
       {
         opacity: 0,
-        scale: 0.6,
-        y: 100
+        scale: 0.8,
+        y: 50,
+        rotation: -5
       },
       {
         opacity: 1,
         scale: 1,
         y: 0,
+        rotation: 0,
         ease: "power3.out",
       }
-    );    // Pin the text with quicker transition
+    );// Pin the text with quicker transition
     ScrollTrigger.create({
       trigger: "#about",
       start: "top 20%", // Pin slightly earlier
       end: "top top", // End at the top of the about section
       pin: "#about-title",
-      pinSpacing: false,
-      onEnter: () => {
+      pinSpacing: false,      onEnter: () => {
         gsap.to(textRef.current, {
-          y: -30,
-          scale: 0.9,
-          opacity: 0.9,
-          duration: 0.3,
+          y: -20,
+          scale: 0.85,
+          opacity: 0.95,
+          rotation: -2,
+          duration: 0.4,
           ease: "power3.inOut",
         });
       },
@@ -56,25 +56,25 @@ const TransitionScene = () => {
           y: 0,
           scale: 1,
           opacity: 1,
-          duration: 0.3,
+          rotation: 0,
+          duration: 0.4,
           ease: "power3.inOut",
         });
       }
     });
   }, []);
 
-  return (
-    <section 
+  return (    <section 
       id="transition-scene" 
       className="min-h-[70vh] w-full relative bg-gradient-to-b from-transparent to-black flex items-center justify-center"
     >
-      <span 
+      <img
+        src="/assets/AbtMe.svg"
+        alt="About Me"
+        ref={textRef}
         id="about-title"
-        ref={textRef} 
-        className="hero_tag text-gray_gradient text-8xl opacity-0 transform-gpu"
-      >
-        About
-      </span>
+        className="w-64 md:w-96 opacity-0 transform-gpu"
+      />
     </section>
   );
 };

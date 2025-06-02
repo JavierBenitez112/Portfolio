@@ -5,7 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import { useMediaQuery } from 'react-responsive';
 import { calculateSizes } from '../constants';
-import Target from '../components/target';
+import Target from '../components/Target';
 import Cube from '../components/Cube';
 import HeroCamera from '../components/HeroCamera';
 import Button from '../components/Button';

@@ -1,5 +1,4 @@
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 import { useRef, useState, useEffect } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
 
@@ -12,7 +11,7 @@ const Cube = ({ ...props }) => {
 
   useEffect(() => {
     ctx.current = gsap.context(() => {
-      // Continuous rotation animation
+      // Only continuous rotation animation
       const rotationTimeline = gsap.timeline({
         repeat: -1,
         repeatDelay: 0.5,
@@ -24,31 +23,6 @@ const Cube = ({ ...props }) => {
         duration: 2.5,
         stagger: {
           each: 0.15,
-        },
-      });
-
-      // Scroll-triggered zoom animation
-      gsap.to(cubeRef.current.position, {
-        z: -20,
-        y: 0,
-        x: 0,
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'center center',
-          end: 'bottom top',
-          scrub: 1.5,
-        },
-      });
-
-      gsap.to(cubeRef.current.scale, {
-        x: 4,
-        y: 4,
-        z: 4,
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'center center',
-          end: 'bottom top',
-          scrub: 1.5,
         },
       });
     });
