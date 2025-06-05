@@ -1,21 +1,48 @@
-import React, { useState } from 'react'
-import Globe from 'react-globe.gl'
-import Button from '../components/Button.jsx'
+import React, { useState, useEffect, useRef } from 'react';
+import Globe from 'react-globe.gl';
+import Button from '../components/Button.jsx';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
     const [hasCopied, setHasCopied] = useState(false);
+    const aboutRef = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            // Initial state for grid containers
+            gsap.set('.grid-container', { 
+                opacity: 0,
+                y: 30
+            });
+
+            // Animate grid containers
+            gsap.to('.grid-container', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: "#about",
+                    start: "top center+=20%",
+                    end: "center center",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        return () => ctx.revert();
+    }, []);
 
     const handleCopy = () => {
         navigator.clipboard.writeText('javibenn@gmail.com');
         setHasCopied(true);
-
-        setTimeout(() => {
-            setHasCopied(false);
-        }, 2000);
-    };
-
-    return (
-        <section className='c-space my-20' id="about">
+        setTimeout(() => setHasCopied(false), 2000);
+    };    return (
+        <section ref={aboutRef} className='c-space min-h-screen' id="about">
             <div className='grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full'>
                 <div className='col-span-1 xl:row-span-3'>
                     <div className='grid-container'>

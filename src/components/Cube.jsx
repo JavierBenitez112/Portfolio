@@ -1,5 +1,4 @@
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 import { useRef, useState, useEffect } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
 
@@ -12,12 +11,13 @@ const Cube = ({ ...props }) => {
 
   useEffect(() => {
     ctx.current = gsap.context(() => {
-      const timeline = gsap.timeline({
+      // Only continuous rotation animation
+      const rotationTimeline = gsap.timeline({
         repeat: -1,
         repeatDelay: 0.5,
       });
 
-      timeline.to(cubeRef.current.rotation, {
+      rotationTimeline.to(cubeRef.current.rotation, {
         y: hovered ? '+=2' : `+=${Math.PI * 2}`,
         x: hovered ? '+=2' : `-=${Math.PI * 2}`,
         duration: 2.5,
@@ -53,7 +53,7 @@ const Cube = ({ ...props }) => {
           material={nodes.Cube.material}
           onPointerEnter={handlePointerEnter}
           onPointerLeave={handlePointerLeave}>
-          <meshMatcapMaterial matcap={texture} toneMapped={false} color="#df0054" />
+          <meshMatcapMaterial matcap={texture} toneMapped={false} color="#df0054" transparent />
         </mesh>
       </group>
     </Float>
