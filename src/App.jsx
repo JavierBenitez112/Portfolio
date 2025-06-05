@@ -4,6 +4,8 @@ import Hero from './pages/Hero'
 import TransitionScene from './pages/TransitionScene'
 import About from './pages/About'
 import lenis from './lib/scroll'
+import Projects from './pages/Projects'
+import Contact from './pages/Contact'
 
 const App = () => {
   useEffect(() => {
@@ -20,6 +22,8 @@ const App = () => {
         <Hero/>
         <TransitionScene />
         <About/>
+        <Projects/>
+        <Contact/>
       </main>
     </div>
   )

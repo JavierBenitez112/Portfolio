@@ -43,8 +43,8 @@ const TransitionScene = () => {
       pin: "#about-title",
       pinSpacing: false,      onEnter: () => {
         gsap.to(textRef.current, {
-          y: -20,
-          scale: 0.85,
+          y: 0,
+          scale: 0.0001,
           opacity: 0.95,
           rotation: -2,
           duration: 0.4,
