@@ -1,12 +1,47 @@
-# React + Vite
+# Portfolio Personal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un portfolio personal interactivo desarrollado con tecnologías modernas de web.
 
-Currently, two official plugins are available:
+## Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React + Vite
+- Three.js / React Three Fiber
+- Tailwind CSS
+- Framer Motion
 
-## Expanding the ESLint configuration
+## Características
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Diseño moderno y responsivo
+- Elementos 3D interactivos
+- Animaciones fluidas
+- Experiencia de usuario inmersiva
+
+## Instalación
+
+1. Clona el repositorio
+```bash
+git clone [URL_DEL_REPOSITORIO]
+```
+
+2. Instala las dependencias
+```bash
+npm install
+```
+
+3. Inicia el servidor de desarrollo
+```bash
+npm run dev
+```
+
+## Estructura del Proyecto
+
+- `/src/components` - Componentes React reutilizables
+- `/src/models` - Modelos 3D en formato GLB
+- `/src/assets` - Recursos estáticos (imágenes, fuentes, etc.)
+
+## Personalización
+
+El proyecto está diseñado para ser fácilmente personalizable. Puedes modificar:
+- Los modelos 3D en la carpeta `/models`
+- Los colores y estilos en los archivos de configuración
+- El contenido en los componentes React
