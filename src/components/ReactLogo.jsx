@@ -10,7 +10,7 @@ import React, { useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 
 const ReactLogo = (props) =>{
-  const { nodes, materials } = useGLTF('/models/react_logo_circle.glb')
+  const { nodes, materials } = useGLTF('models/react_logo_circle.glb')
   return (
     <Float
       floatIntensity={2} // Sets the intensity of the floating animation (default: 1)
@@ -45,6 +45,6 @@ const ReactLogo = (props) =>{
   )
 }
 
-useGLTF.preload('/models/react_logo_circle.glb')
+useGLTF.preload('models/react_logo_circle.glb')
 
 export default ReactLogo

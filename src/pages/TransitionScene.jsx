@@ -69,7 +69,7 @@ const TransitionScene = () => {
       className="min-h-[70vh] w-full relative bg-gradient-to-b from-transparent to-black flex items-center justify-center"
     >
       <img
-        src="/assets/AbtMe.svg"
+        src="assets/AbtMe.svg"
         alt="About Me"
         ref={textRef}
         id="about-title"

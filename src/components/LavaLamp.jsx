@@ -10,7 +10,7 @@ import React, { useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 
 const LavaLamp = (props) =>{
-  const { nodes, materials } = useGLTF('/models/lava_Lamp.glb')
+  const { nodes, materials } = useGLTF('models/lava_Lamp.glb')
   return (
     <group {...props} dispose={null}>
       <Float>
@@ -26,6 +26,6 @@ const LavaLamp = (props) =>{
   )
 }
 
-useGLTF.preload('/models/lava_Lamp.glb')
+useGLTF.preload('models/lava_Lamp.glb')
 
 export default LavaLamp
