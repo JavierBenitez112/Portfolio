@@ -47,16 +47,16 @@ export const myProjects = [
         subdesc:
             'Desarrollada con React.js y TailwindCSS, esta aplicación ofrece una experiencia de usuario moderna y responsiva, con funcionalidades como mensajes directos, grupos y notificaciones.',
         href: 'https://github.com/JavierBenitez112/JSonly.git',
-        texture: '/textures/project/project1.mp4',
-        logo: '/assets/project-logo1.png',
+        texture: 'textures/project/project1.mp4',
+        logo: 'assets/project-logo1.png',
         logoStyle: {
             backgroundColor: '#2A1816',
             border: '0.2px solid #36201D',
             boxShadow: '0px 0px 60px 0px #AA3C304D',
         },
-        spotlight: '/assets/spotlight1.png',
+        spotlight: 'assets/spotlight1.png',
         tags: [
-            { id: 1, name: 'React.js', path: '/assets/react.svg' },
+            { id: 1, name: 'React.js', path: 'assets/react.svg' },
             { id: 2, name: 'TailwindCSS', path: 'assets/tailwindcss.png' },
         ],
     },
@@ -66,16 +66,16 @@ export const myProjects = [
         subdesc:
             'Desarrollada con React.js, TailwindCSS, esta aplicación ofrece una experiencia de usuario fluida y atractiva, con un diseño moderno y responsivo.',
         href: 'https://github.com/JavierBenitez112/PelisCatalogo.git',
-        texture: '/textures/project/project2.mp4',
-        logo: '/assets/project-logo2.png',
+        texture: 'textures/project/project2.mp4',
+        logo: 'assets/project-logo2.png',
         logoStyle: {
             backgroundColor: '#13202F',
             border: '0.2px solid #17293E',
             boxShadow: '0px 0px 60px 0px #2F6DB54D',
         },
-        spotlight: '/assets/spotlight2.png',
+        spotlight: 'assets/spotlight2.png',
         tags: [
-            { id: 1, name: 'React.js', path: '/assets/react.svg' },
+            { id: 1, name: 'React.js', path: 'assets/react.svg' },
             { id: 2, name: 'TailwindCSS', path: 'assets/tailwindcss.png' },
         ],
     },
@@ -85,16 +85,16 @@ export const myProjects = [
         subdesc:
             'Desarrollada con React.js y TailwindCSS, esta aplicación ofrece una interfaz de usuario limpia y moderna, con funcionalidades que incluyen operaciones aritméticas, memoria y más.',
         href: 'https://github.com/JavierBenitez112/React-Calculator.git',
-        texture: '/textures/project/project3.mp4',
-        logo: '/assets/project-logo3.png',
+        texture: 'textures/project/project3.mp4',
+        logo: 'assets/project-logo3.png',
         logoStyle: {
         backgroundColor: '#1C1A43',
         border: '0.2px solid #252262',
         boxShadow: '0px 0px 60px 0px #635BFF4D',
         },
-        spotlight: '/assets/spotlight5.png',
+        spotlight: 'assets/spotlight5.png',
         tags: [
-            { id: 1, name: 'React.js', path: '/assets/react.svg' },
+            { id: 1, name: 'React.js', path: 'assets/react.svg' },
             { id: 2, name: 'TailwindCSS', path: 'assets/tailwindcss.png' },
         ],
     },
@@ -143,7 +143,7 @@ export const workExperiences = [
         duration: '2022 - Present',
         title:
             'Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to life, allowing stakeholders to experience the user flow and interactions before development.',
-        icon: '/assets/framer.svg',
+        icon: 'assets/framer.svg',
         animation: 'victory',
     },
     {
@@ -153,7 +153,7 @@ export const workExperiences = [
         duration: '2020 - 2022',
         title:
             'Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.',
-        icon: '/assets/figma.svg',
+        icon: 'assets/figma.svg',
         animation: 'clapping',
     },
     {
@@ -163,7 +163,7 @@ export const workExperiences = [
         duration: '2019 - 2020',
         title:
             'Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.',
-        icon: '/assets/notion.svg',
+        icon: 'assets/notion.svg',
         animation: 'salute',
     },
 ];

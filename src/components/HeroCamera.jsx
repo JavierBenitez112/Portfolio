@@ -1,7 +1,7 @@
 import { useFrame } from '@react-three/fiber';
 import { easing } from 'maath';
 import React, { use } from 'react'
-import Target from './target';
+import Target from './Target';
 import {useRef} from 'react'
 
 const HeroCamera = ({ children, isMobile }) => {

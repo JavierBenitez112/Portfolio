@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 
 const Island = (props) => {
-  const { nodes, materials } = useGLTF('/models/base_basic_shaded.glb')
+  const { nodes, materials } = useGLTF('models/base_basic_shaded.glb')
   return (
     <group {...props} dispose={null}>
       <Float floatIntensity={0.5} speed={2} rotationIntensity={1.2} floatingRange={[0, 1]}>
@@ -23,6 +23,6 @@ const Island = (props) => {
 }
 
 
-useGLTF.preload('/models/base_basic_shaded.glb')
+useGLTF.preload('models/base_basic_shaded.glb')
 
 export default Island

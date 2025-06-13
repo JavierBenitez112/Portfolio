@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 
 const Cassette = (props) => {
-  const { nodes, materials } = useGLTF('/models/cassette.glb')
+  const { nodes, materials } = useGLTF('models/cassette.glb')
   return (
     <group {...props} dispose={null}>
       <Float floatIntensity={0.5} speed={2} rotationIntensity={1.2} floatingRange={[0, 1]}>
@@ -23,6 +23,6 @@ const Cassette = (props) => {
 }
 
 
-useGLTF.preload('/models/cassette.glb')
+useGLTF.preload('models/cassette.glb')
 
 export default Cassette

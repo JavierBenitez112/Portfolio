@@ -10,7 +10,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Scenario = (props) => {
-  const { nodes, materials } = useGLTF('/models/the_magic_room.glb')
+  const { nodes, materials } = useGLTF('models/the_magic_room.glb')
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -231,6 +231,6 @@ const Scenario = (props) => {
   )
 }
 
-useGLTF.preload('/models/the_magic_room.glb')
+useGLTF.preload('models/the_magic_room.glb')
 
 export default Scenario

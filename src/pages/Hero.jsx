@@ -10,7 +10,7 @@ import Cube from '../components/Cube';
 import HeroCamera from '../components/HeroCamera';
 import Button from '../components/Button';
 import LavaLamp from '../components/LavaLamp';
-import Cassette from '../components/Cassette';
+import Cassette from '../components/cassette';
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -24,7 +24,7 @@ const Hero = () => {
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
           Hi, I am Javier
           <span className="waving-hand">
-            <img src="/assets/Hand.svg" alt="waving hand" className="inline-block w-11 h-10 ml-3" />
+            <img src="assets/Hand.svg" alt="waving hand" className="inline-block w-11 h-10 ml-3" />
           </span>
         </p>
         <span className="hero_tag text-gray_gradient">Fullstack Developer</span>
